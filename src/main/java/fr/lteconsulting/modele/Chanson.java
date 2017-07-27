@@ -39,4 +39,26 @@ public class Chanson
 	{
 		System.out.println( nom + " (" + dureeEnSecondes + " sec.)" );
 	}
+
+	public void setDisqueId(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int getId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public Object getDisqueId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setId(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 }

@@ -6,7 +6,7 @@ import java.util.UUID;
 
 public class Disque
 {
-	private String codeBarre;
+	public String codeBarre;
 	private String nom;
 	private List<Chanson> chansons = new ArrayList<>();
 
@@ -70,4 +70,15 @@ public class Disque
 				chanson.afficher();
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "codeBarre=" + codeBarre + ", nom=" + nom + ", chansons=" + chansons +"\r\n";
+	}
+
+	public Object getChansons() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

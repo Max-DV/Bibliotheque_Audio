@@ -1,5 +1,6 @@
 package fr.lteconsulting;
 
+
 import fr.lteconsulting.modele.Bibliotheque;
 import fr.lteconsulting.modele.Chanson;
 import fr.lteconsulting.modele.Disque;
@@ -8,6 +9,7 @@ public class Application
 {
 	public static void main( String[] args )
 	{
+	
 		Bibliotheque b = new Bibliotheque();
 
 		Disque d = new Disque( "La Lune" );
