@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.lteconsulting.modele.Chanson;
-import fr.lteconsulting.modele.Disque;
+
 
 public class ChansonDAO {
 	private Connection connection;
@@ -37,22 +37,25 @@ public class ChansonDAO {
 	}
 	
 	
-	public List<Chanson> findByDisqueId(String disque){
+	public List<Chanson> findByDisqueId(String disqueId){
 try {
-			
-			String sql = "SELECT * FROM `chansons` WHERE id = ?";
+			List<Chanson> chansons = new ArrayList<>();
+			String sql = "SELECT * FROM `chansons` WHERE disque_id = ?";
 			PreparedStatement statement = connection.prepareStatement(sql);
-			statement.setString(1, disque);
+			statement.setString(1, disqueId);
 			ResultSet resultSet = statement.executeQuery();
 			while( resultSet.next() )
-				//TODO
-				String nom = resultSet.getString("disque_id");
+				
+			chansons.add (createChansonFromResultSet(resultSet));
+		if(chansons.size()==0){
+			return null;
+		}
 			
-				return null;
+				return chansons;
 		
 		} catch (SQLException e) {
 			throw new RuntimeException("Impossible de réaliser l(es) opération(s)", e);
-		}return null;
+		}
 		
 	}
 
